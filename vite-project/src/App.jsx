@@ -15,7 +15,7 @@ const App = () => {
       "position": "Аналитик по маркетингу"
     },
     {
-      "name": "Ирина Сидорова",
+      "name": "Ирина Сидорoва",
       "department": "Финансы",
       "position": "Финансовый аналитик"
     },
@@ -47,7 +47,7 @@ const App = () => {
     {
       "name": "Татьяна Ковалёва",
       "department": "Финансы",
-      "position": "Контролёр"
+      "position": "Кoнтролёр"
     },
     {
       "name": "Сергей Новиков",
@@ -226,8 +226,7 @@ const App = () => {
                   <select
                     name='department'
                     value={editObj.department}
-                    onChange={(ev) => setEditObj({ ...editObj, department: ev.target.value })}
-                  >
+                    onChange={(ev) => setEditObj({ ...editObj, department: ev.target.value })}>
                     <option value="">Select Department</option>
                     {departments.map((item, index) => (
                       <option key={index} value={item}>{item}</option>
@@ -236,10 +235,10 @@ const App = () => {
                   <button type="submit">SAVE</button>
                 </form>
               ) : (
-                <>
+               <>
                   {item.name}, {item.department}
-                  <button onClick={() => startEdit(index)}>Edit</button>
-                  <button onClick={() => deleteUser(index)}>Delete</button>
+                  <button onClick={() =>startEdit(index)}>Edit</button>
+                  <button onClick={()=> deleteUser(index)}>Delete</button>
                 </>
               )}
             </li>
@@ -249,4 +248,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default App

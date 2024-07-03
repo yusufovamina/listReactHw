@@ -111,21 +111,22 @@ const App = () => {
   const departments = [...new Set(arr.map((item) => item.department))];
 
   const [obj, setObj] = useState({ name: '', department: '' });
-  const [editIndex, setEditIndex] = useState(-1); // индекс редактируемого пользователя
-  const [editObj, setEditObj] = useState({ name: '', department: '' }); // данные редактируемого пользователя
+  const [editIndex, setEditIndex] = useState(-1);
+  const [editObj, setEditObj] = useState({ name: '', department: '' }); 
   const [search, setSearch] = useState('');
   const [select, setSelect] = useState('');
 
-  const deleteUser = (index) => {
-    const newArr = [...arr];
-    newArr.splice(index, 1);
-    setArr(newArr);
-  };
+
 
   const startEdit = (index) => {
     setEditIndex(index);
     const userToEdit = arr[index];
     setEditObj({ ...userToEdit });
+  };
+   const deleteUser = (index) => {
+    const newArr = [...arr];
+    newArr.splice(index, 1);
+    setArr(newArr);
   };
 
   const handleEdit = (ev) => {
@@ -171,7 +172,7 @@ const App = () => {
               name='name'
               type="text"
               value={obj.name}
-              placeholder="Name"
+              placeholder="name"
               onChange={handleInputs}
             />
             <select
